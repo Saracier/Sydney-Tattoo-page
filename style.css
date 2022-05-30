@@ -23,7 +23,7 @@ ul {
     display: flex;
     align-items: center;
     height: 100%;
-    color: #de9c18;
+    color: #ffc146;
     padding: 1.4rem;
     text-decoration: none;
     font-family: 'Roboto Condensed', sans-serif;
@@ -32,13 +32,13 @@ ul {
   ul a:hover,
   ul a:active {
     color: black;
-    background: #de9c18;
+    background: #ffc146;
     cursor: pointer; }
 
 header {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, rgba(0, 1, 16, 0.6) 30%, transparent), url("/img/pexels-cottonbro-4125503.jpg");
+  background: linear-gradient(to right, rgba(0, 1, 16, 0.6) 30%, transparent 40%), url("img/pexels-cottonbro-4125503.jpg");
   background-size: cover;
   background-position: right 40% bottom 20%; }
 
@@ -48,26 +48,30 @@ header {
   left: 3%;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  color: #de9c18; }
+  color: #ffc146; }
   .header__name h6 {
     font-size: 1rem; }
 
 h1 {
   font-size: 6rem;
   font-weight: 600;
-  text-shadow: 4px 4px 8px black; }
+  text-shadow: 4px 4px 8px black;
+  padding-top: 100px;
+  width: 100px; }
 
-#OurWork {
-  border-top: #de9c18 2px solid;
+#OurWork,
+#OurTeam {
+  border-top: #ffc146 2px solid;
   width: 100%;
   height: auto;
   background-color: #241011; }
-  #OurWork h2 {
+  #OurWork h2,
+  #OurTeam h2 {
     padding: 30px;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
-    color: #de9c18;
+    color: #ffc146;
     font-size: 3rem; }
 
 .OurWork__gallery-container {
@@ -84,11 +88,12 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 80% 50%;
+  object-position: 60% 50%;
   transition: all .2s;
   opacity: 80%; }
 
-.OurWork__gallery-imgages:hover {
+.OurWork__gallery-imgages:hover,
+.person__picture:hover {
   transform: scale(1.1);
   opacity: 100%; }
 
@@ -100,5 +105,31 @@ h1 {
   .OurWork__gallery-img3,
   .OurWork__gallery-img6 {
     display: none; } }
+#OurTeam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #080911; }
+
+.person__containter {
+  width: 50vw;
+  display: flex;
+  box-sizing: border-box;
+  margin: 30px;
+  align-items: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  color: #ffc146;
+  font-size: 1rem; }
+
+.person__containter:nth-child(even) {
+  flex-direction: row-reverse; }
+
+.person__picture {
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+  transition: all .2s;
+  opacity: 80%; }
 
 /*# sourceMappingURL=style.css.map */

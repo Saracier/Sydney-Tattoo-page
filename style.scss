@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600p');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 $dark-color: #080911;
-$golden-color: #de9c18;
+$golden-color: #ffc146;
 $reddish-color: #241011;
+@mixin golden-border-top {
+    border-top: $golden-color 2px solid;
+}
 
 * {
 margin: 0;
@@ -36,6 +39,7 @@ ul {
         font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;
         font-size: 24px;
+        // font-weight: bold;
     }
     a:hover,
     a:active{
@@ -67,10 +71,14 @@ h1 {
     font-size: 6rem;
     font-weight: 600;
     text-shadow: 4px 4px 8px rgb(0, 0, 0);
+    padding-top: 100px;
+    width: 100px;
 }
 
-#OurWork {
-    border-top: $golden-color 2px solid;
+#OurWork,
+#OurTeam {
+    // border-top: $golden-color 2px solid;
+    @include golden-border-top();
     width: 100%;
     height:auto;
     background-color: $reddish-color;
@@ -121,11 +129,12 @@ h1 {
     width: 100%;
     height:100%;
     object-fit: cover;
-    object-position: 80% 50%;
+    object-position: 60% 50%;
     transition: all .2s;
     opacity: 80%;
 }
-.OurWork__gallery-imgages:hover {
+.OurWork__gallery-imgages:hover,
+.person__picture:hover {
     transform: scale(1.1);
     opacity: 100%;
 }
@@ -139,4 +148,38 @@ h1 {
     .OurWork__gallery-img6 {
         display: none;
     }
+}
+
+#OurTeam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark-color;
+}
+
+.person__containter {
+    width: 50vw;
+    display:flex;
+    box-sizing: border-box;
+    margin: 30px;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    color: $golden-color;
+    font-size: 1rem;
+
+}
+
+
+
+.person__containter:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.person__picture {
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    transition: all .2s;
+    opacity: 80%;
 }
