@@ -161,25 +161,37 @@ h1 {
     width: 50vw;
     display:flex;
     box-sizing: border-box;
-    margin: 30px;
+    margin: 20px;
     align-items: center;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
     color: $golden-color;
     font-size: 1rem;
-
+position: relative;
 }
 
+.person__containter:hover {
+    background-color: $golden-color;
+}
 
+.person__name {
+    color: $golden-color;
+    align-self: flex-start;
+    padding: 20px;
+    font-size: 2rem;
+}
 
-.person__containter:nth-child(even) {
-    flex-direction: row-reverse;
+.person__description {
+    display: inline;
+    position: absolute;
+    width: 70%;
+    right: 0;
+    color: $dark-color
 }
 
 .person__picture {
-    margin: 10px;
-    height: 200px;
-    width: 200px;
+    margin: 5px;
+    height: 250px;
+    width: 250px;
     transition: all .2s;
-    opacity: 80%;
 }

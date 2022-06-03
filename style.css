@@ -115,21 +115,34 @@ h1 {
   width: 50vw;
   display: flex;
   box-sizing: border-box;
-  margin: 30px;
+  margin: 20px;
   align-items: center;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   color: #ffc146;
-  font-size: 1rem; }
+  font-size: 1rem;
+  position: relative; }
 
-.person__containter:nth-child(even) {
-  flex-direction: row-reverse; }
+.person__containter:hover {
+  background-color: #ffc146; }
+
+.person__name {
+  color: #ffc146;
+  align-self: flex-start;
+  padding: 20px;
+  font-size: 2rem; }
+
+.person__description {
+  display: inline;
+  position: absolute;
+  width: 70%;
+  right: 0;
+  color: #080911; }
 
 .person__picture {
-  margin: 10px;
-  height: 200px;
-  width: 200px;
-  transition: all .2s;
-  opacity: 80%; }
+  margin: 5px;
+  height: 250px;
+  width: 250px;
+  transition: all .2s; }
 
 /*# sourceMappingURL=style.css.map */
