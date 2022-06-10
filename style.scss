@@ -4,101 +4,211 @@ $dark-color: #080911;
 $golden-color: #ffc146;
 $reddish-color: #241011;
 @mixin golden-border-top {
-    border-top: $golden-color 2px solid;
+  border-top: $golden-color 2px solid;
 }
 
 * {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
-    width: 100%;
-    height: 4rem;
-    background: $dark-color;
-    box-shadow: 0px 2px 10px 5px $dark-color;
-    z-index: 1;
+  width: 100%;
+  height: 4rem;
+  background: $dark-color;
+  box-shadow: 0px 2px 10px 5px $dark-color;
+  z-index: 1;
 }
 
 ul {
-    height: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  li {
+    list-style-type: none;
+  }
+  a {
     display: flex;
-    justify-content: flex-end;
-    align-items: center; 
+    align-items: center;
     height: 100%;
-    li {
-        list-style-type: none;
-    }
-    a {
-        display: flex;
-        align-items: center; 
-        height: 100%;
-        color: $golden-color;
-        padding: 1.4rem;   
-        text-decoration: none;
-        font-family: 'Roboto Condensed', sans-serif;
-        text-transform: uppercase;
-        font-size: 24px;
-        // font-weight: bold;
-    }
-    a:hover,
-    a:active{
-        color: black;
-        background: $golden-color;
-        cursor:pointer;
-    }
-}
-header {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(to right, rgba(0, 1, 16, 0.6) 30%, transparent 40%), url("img/pexels-cottonbro-4125503.jpg"); 
-    background-size: cover;
-    background-position: right 40% bottom 20%;
-
-}
-.header__name {
-    position: absolute;
-    top: 10%;
-    left: 3%;
+    color: $golden-color;
+    padding: 1.4rem;
+    text-decoration: none;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
-    color: $golden-color;
-    h6 {
-        font-size: 1rem;
-    }
+    font-size: 24px;
+    // font-weight: bold;
+  }
+  a:hover,
+  a:active {
+    color: black;
+    background: $golden-color;
+    cursor: pointer;
+  }
+}
+header {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(0, 1, 16, 0.6) 30%,
+      transparent 40%
+    ),
+    url('img/pexels-cottonbro-4125503.jpg');
+  background-size: cover;
+  background-position: right 40% bottom 20%;
+  position: relative;
+}
+.header__name {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  color: $golden-color;
+  h6 {
+    font-size: 1rem;
+  }
 }
 h1 {
-    font-size: 6rem;
-    font-weight: 600;
-    text-shadow: 4px 4px 8px rgb(0, 0, 0);
-    padding-top: 100px;
-    width: 100px;
+  font-size: 6rem;
+  font-weight: 600;
+  text-shadow: 4px 4px 8px rgb(0, 0, 0);
+  padding-top: 100px;
+  width: 100px;
+}
+
+#button__container {
+  position: absolute;
+  bottom: 20%;
+  right: 50%;
+  transform: translateX(50%);
+  overflow: hidden;
+  padding: 5px;
+}
+#cta__button {
+  padding: 1rem;
+  font-size: 2rem;
+  //   background-color: $golden-color;
+  background-color: $reddish-color;
+  border-radius: 10px;
+  // border-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+#cta__button:hover,
+#cta__button:focus {
+  background-color: rgb(131, 0, 0);
+  box-shadow: 0px 0px 5px $golden-color inset;
+  outline: none;
+}
+
+#cta__button::before {
+  content: '';
+  position: absolute;
+  height: 300px;
+  width: 60px;
+  transform: translate(90%, -45%);
+  background-color: #ffc146;
+  z-index: -1;
+  animation: rotating-button 7s linear infinite;
+}
+
+#scroll__prompt {
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+}
+
+.scroll__arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid $golden-color;
+  border-right: 3px solid $golden-color;
+  transform: rotate(45deg);
+  margin: -10px;
+  // -webkit-animation: scroll 2s infinite linear;
+  animation: scroll 3s infinite ease-in;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+    transform: rotate(45deg) translate (-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.scroll__arrow:nth-child(2) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.scroll__arrow:nth-child(3) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+@keyframes rotating-button {
+  from {
+    transform: translate(90%, -45%) rotate(0deg);
+  }
+  to {
+    transform: translate(90%, -45%) rotate(359deg);
+  }
 }
 
 #OurWork,
 #OurTeam {
-    // border-top: $golden-color 2px solid;
-    @include golden-border-top();
-    width: 100%;
-    height:auto;
-    background-color: $reddish-color;
-    h2 {
-        padding: 30px;
-        text-align: center;
-        font-family: 'Roboto Condensed', sans-serif;
-        text-transform: uppercase;
-        color: $golden-color;
-        font-size: 3rem;
-    }
+  // border-top: $golden-color 2px solid;
+  @include golden-border-top();
+  width: 100%;
+  height: auto;
+  background-color: $dark-color;
+  h2 {
+    padding: 30px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    color: $golden-color;
+    font-size: 3rem;
+  }
 }
+
+#OurTeam {
+  background-image: url('https://www.designyourway.net/diverse/darkpat/COLOURlovers.com-Gothic_Wallpaper.jpg');
+}
+
 .OurWork__gallery-container {
-    display: grid;
-    grid-template-rows: repeat(2, minmax(150px, 500px));
-    grid-template-columns: repeat(3, minmax(150px, 400px));
-    justify-content:center;
-    justify-items: center;
-    gap: 30px;
-    padding: 100px;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(150px, 500px));
+  grid-template-columns: repeat(3, minmax(150px, 400px));
+  justify-content: center;
+  justify-items: center;
+  gap: 30px;
+  padding: 100px;
 }
 // .OurWork__gallery-img1 {
 //     grid-column: 1/2;
@@ -125,73 +235,75 @@ h1 {
 //     grid-row: 2/3;
 // }
 .OurWork__gallery-imgages {
-    overflow: hidden;
-    width: 100%;
-    height:100%;
-    object-fit: cover;
-    object-position: 60% 50%;
-    transition: all .2s;
-    opacity: 80%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 50%;
+  transition: all 0.2s;
+  opacity: 80%;
 }
 .OurWork__gallery-imgages:hover,
 .person__picture:hover {
-    transform: scale(1.1);
-    opacity: 100%;
+  transform: scale(1.1);
+  opacity: 100%;
 }
 
 @media screen and (max-width: 700px) {
-    .OurWork__gallery-container {
-        grid-template-rows: repeat(4, minmax(150px, 400px));
-        grid-template-columns: repeat(1, minmax(150px, 400px));
-    }
-    .OurWork__gallery-img3,
-    .OurWork__gallery-img6 {
-        display: none;
-    }
+  .OurWork__gallery-container {
+    grid-template-rows: repeat(4, minmax(150px, 400px));
+    grid-template-columns: repeat(1, minmax(150px, 400px));
+  }
+  .OurWork__gallery-img3,
+  .OurWork__gallery-img6 {
+    display: none;
+  }
 }
 
 #OurTeam {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $dark-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-color;
 }
 
 .person__containter {
-    width: 50vw;
-    display:flex;
-    box-sizing: border-box;
-    margin: 20px;
-    align-items: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
-    color: $golden-color;
-    font-size: 1rem;
-position: relative;
+  width: 50vw;
+  display: flex;
+  box-sizing: border-box;
+  margin: 20px;
+  align-items: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  color: $golden-color;
+  font-size: 1rem;
+  position: relative;
 }
 
-.person__containter:hover {
-    background-color: $golden-color;
+.person__containter:hover .person__description {
+  visibility: visible;
+  background-color: $golden-color;
 }
 
 .person__name {
-    color: $golden-color;
-    align-self: flex-start;
-    padding: 20px;
-    font-size: 2rem;
+  color: $golden-color;
+  align-self: flex-start;
+  padding: 20px;
+  font-size: 2rem;
 }
 
 .person__description {
-    display: inline;
-    position: absolute;
-    width: 70%;
-    right: 0;
-    color: $dark-color
+  display: inline;
+  position: absolute;
+  width: 70%;
+  right: 0;
+  color: $dark-color;
+  visibility: hidden;
 }
 
 .person__picture {
-    margin: 5px;
-    height: 250px;
-    width: 250px;
-    transition: all .2s;
+  margin: 5px;
+  height: 250px;
+  width: 250px;
+  transition: all 0.2s;
 }

@@ -40,7 +40,8 @@ header {
   width: 100%;
   background: linear-gradient(to right, rgba(0, 1, 16, 0.6) 30%, transparent 40%), url("img/pexels-cottonbro-4125503.jpg");
   background-size: cover;
-  background-position: right 40% bottom 20%; }
+  background-position: right 40% bottom 20%;
+  position: relative; }
 
 .header__name {
   position: absolute;
@@ -59,12 +60,87 @@ h1 {
   padding-top: 100px;
   width: 100px; }
 
+#button__container {
+  position: absolute;
+  bottom: 20%;
+  right: 50%;
+  transform: translateX(50%);
+  overflow: hidden;
+  padding: 5px; }
+
+#cta__button {
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: #241011;
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none; }
+
+#cta__button:hover,
+#cta__button:focus {
+  background-color: #830000;
+  box-shadow: 0px 0px 5px #ffc146 inset;
+  outline: none; }
+
+#cta__button::before {
+  content: '';
+  position: absolute;
+  height: 300px;
+  width: 60px;
+  transform: translate(90%, -45%);
+  background-color: #ffc146;
+  z-index: -1;
+  animation: rotating-button 7s linear infinite; }
+
+#scroll__prompt {
+  position: absolute;
+  bottom: 10%;
+  right: 50%; }
+
+.scroll__arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid #ffc146;
+  border-right: 3px solid #ffc146;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: scroll 3s infinite ease-in; }
+
+@keyframes scroll {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 0;
+    transform: rotate(45deg) translate -20px, -20px; }
+  50% {
+    opacity: 1; }
+  90% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px); }
+  100% {
+    opacity: 0; } }
+.scroll__arrow:nth-child(2) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s; }
+
+.scroll__arrow:nth-child(3) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s; }
+
+@keyframes rotating-button {
+  from {
+    transform: translate(90%, -45%) rotate(0deg); }
+  to {
+    transform: translate(90%, -45%) rotate(359deg); } }
 #OurWork,
 #OurTeam {
   border-top: #ffc146 2px solid;
   width: 100%;
   height: auto;
-  background-color: #241011; }
+  background-color: #080911; }
   #OurWork h2,
   #OurTeam h2 {
     padding: 30px;
@@ -73,6 +149,9 @@ h1 {
     text-transform: uppercase;
     color: #ffc146;
     font-size: 3rem; }
+
+#OurTeam {
+  background-image: url("https://www.designyourway.net/diverse/darkpat/COLOURlovers.com-Gothic_Wallpaper.jpg"); }
 
 .OurWork__gallery-container {
   display: grid;
@@ -89,7 +168,7 @@ h1 {
   height: 100%;
   object-fit: cover;
   object-position: 60% 50%;
-  transition: all .2s;
+  transition: all 0.2s;
   opacity: 80%; }
 
 .OurWork__gallery-imgages:hover,
@@ -123,7 +202,8 @@ h1 {
   font-size: 1rem;
   position: relative; }
 
-.person__containter:hover {
+.person__containter:hover .person__description {
+  visibility: visible;
   background-color: #ffc146; }
 
 .person__name {
@@ -137,12 +217,13 @@ h1 {
   position: absolute;
   width: 70%;
   right: 0;
-  color: #080911; }
+  color: #080911;
+  visibility: hidden; }
 
 .person__picture {
   margin: 5px;
   height: 250px;
   width: 250px;
-  transition: all .2s; }
+  transition: all 0.2s; }
 
 /*# sourceMappingURL=style.css.map */
