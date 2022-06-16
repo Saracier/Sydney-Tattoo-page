@@ -66,13 +66,12 @@ h1 {
   right: 50%;
   transform: translateX(50%);
   overflow: hidden;
-  padding: 5px; }
+  padding: 1px; }
 
 #cta__button {
   padding: 1rem;
   font-size: 2rem;
   background-color: #241011;
-  border-radius: 10px;
   color: white;
   text-transform: uppercase;
   cursor: pointer;
